@@ -17,24 +17,27 @@ public class PlayerControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InputControls;
+        body = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        InputControls();
+    }
+    
         //if
         //(condition with a true/false answer)
         //{ what happens }
 
-        if (health > 100) // true
-        {
-            Debug.Log("Health is more than 100");
-        }
-        else //false
-        {
-            Debug.Log("Health is *NOT* more than 100");
-        }
+        //if (health > 100) // true
+        //{
+         //   Debug.Log("Health is more than 100");
+        //}
+        //else //false
+        //{
+         //   Debug.Log("Health is *NOT* more than 100");
+        //}
 
     void InputControls()
         {
@@ -57,15 +60,15 @@ public class PlayerControls : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                float force = JumpForce();
+                float force = jumpForce();
                 Jump(force);
             }
         }    
-    }
+    
 
     void Jump(float force)
     {
-        body.Addforce(Vector3.up * force);
+        body.AddForce(Vector3.up * force);
     }
 
     float jumpForce()
