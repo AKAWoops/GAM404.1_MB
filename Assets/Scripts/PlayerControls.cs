@@ -66,9 +66,9 @@ public class PlayerControls : MonoBehaviour
         }    
     
 
-    void Jump(float force)
+    void Jump(float jumpforce)
     {
-        body.AddForce(Vector3.up * force);
+        body.AddForce(Vector3.up * jumpforce);
     }
 
     float jumpForce()
