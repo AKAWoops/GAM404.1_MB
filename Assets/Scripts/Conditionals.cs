@@ -17,6 +17,9 @@ public class Conditionals : MonoBehaviour
     int playerAttack = 2;
     [SerializeField]
     int enemyAttack = 2;
+    [SerializeField]
+    bool theEnd;
+    bool printOnce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -46,19 +49,58 @@ public class Conditionals : MonoBehaviour
     void Update()
     {
         // everything in these brackets is callled everyframe of the game
-        if (playerAction == "Attack")
+        if (!printOnce && theEnd)
         {
-            enemyHealth = enemyHealth - playerAttack;
-            Debug.Log("Player attacks Enemy for" + playerAttack + " Damage!");
-            Debug.Log("Enemy has " + enemyHealth);
-            playerHealth = playerHealth - enemyAttack;
-            Debug.Log("Enemy attacks back for " + enemyAttack + "damage!");
-            Debug.Log("Player has " + playerHealth);
-
-            // Debug.Log("then we can check update every seccond");
-            // playerAction = "I Attacked";
-
-            playerAction = "Attack Finished!";
+           // if (theEnd)
+            //{
+                if (enemyHealth == 0)
+                {
+                    Debug.Log("Enemy is destroyed!");
+                    Debug.Log("Player is the winner!");
+                    //printOnce = true;
+                }
+                if (playerHealth == 0)
+                {
+                    Debug.Log("Player has Lost");
+                    Debug.Log("try again ahahaa");
+                    //printOnce = true;
+                }
+                printOnce = true;
         }
+        if(theEnd == false)
+        {
+            if (playerAction == "Attack")
+            {
+                if(playerHealth != 0)
+                {
+                    enemyHealth = enemyHealth - playerAttack;
+                }
+
+                enemyHealth = enemyHealth - playerAttack;
+                if (enemyHealth == 0)
+                {
+                    theEnd = true;
+                }
+                Debug.Log("Player attacks Enemy for" + playerAttack + " Damage!");
+                Debug.Log("Enemy has " + enemyHealth);
+                if(enemyHealth != 0)
+                {
+                    playerHealth = playerHealth - enemyAttack;
+                }
+                playerHealth = playerHealth - enemyAttack;
+                if(playerHealth == 0)
+                {
+                    theEnd = true;
+                }
+                Debug.Log("Enemy attacks back for " + enemyAttack + "damage!");
+                Debug.Log("Player has " + playerHealth);
+
+                // Debug.Log("then we can check update every seccond");
+                // playerAction = "I Attacked";
+
+                playerAction = "Attack Finished!";
+            }
+        }
+        
     }
 }
