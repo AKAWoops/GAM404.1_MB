@@ -51,6 +51,8 @@ public class Conditionals : MonoBehaviour
         // everything in these brackets is callled everyframe of the game
         if (!printOnce && theEnd)
         {
+            // nested check annoying changed my mind can add a new if with printonce and add the
+            // end in it to save having to write printone = true on each debug line
            // if (theEnd)
             //{
                 if (enemyHealth == 0)
@@ -71,7 +73,7 @@ public class Conditionals : MonoBehaviour
         {
             if (playerAction == "Attack")
             {
-                if(playerHealth != 0)
+                if (playerHealth != 0)
                 {
                     enemyHealth = enemyHealth - playerAttack;
                 }
@@ -83,13 +85,13 @@ public class Conditionals : MonoBehaviour
                 }
                 Debug.Log("Player attacks Enemy for" + playerAttack + " Damage!");
                 Debug.Log("Enemy has " + enemyHealth);
-                if(enemyHealth != 0)
+                if (enemyHealth != 0)
                 {
                     playerHealth = playerHealth - enemyAttack;
                 }
                 playerHealth = playerHealth - enemyAttack;
-                if(playerHealth <= 0)
-                {
+                if (playerHealth == 0)
+                { 
                     theEnd = true;
                 }
                 Debug.Log("Enemy attacks back for " + enemyAttack + "damage!");

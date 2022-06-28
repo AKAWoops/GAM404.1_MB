@@ -10,6 +10,9 @@ public class Classes : MonoBehaviour
     [SerializeField]
     string gender;
 
+    int playerHP = 10;
+    int enemyHP = 100;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,4 +25,12 @@ public class Classes : MonoBehaviour
     {
         //Everything in these brackets is run every frame of the game
     }
+}
+
+public void Battler
+{
+    // Variables
+    int maxHP = 100;
+    int hp = 100;
+    int attackPower = 12;
 }
