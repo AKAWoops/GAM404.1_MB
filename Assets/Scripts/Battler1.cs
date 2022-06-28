@@ -5,8 +5,8 @@ using UnityEngine;
 public class Battler1 : MonoBehaviour
 {
     //variable go here
-    Battler player = new Battler();
-    Battler enemy = new Battler();
+    Battler player = new Battler(200, 200);
+    Battler enemy = new Battler(25, 25, 5);
     [SerializeField]bool attack = false;
 
 
@@ -14,8 +14,9 @@ public class Battler1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemy.maxHP = 25;
-        enemy.hp = enemy.maxHP;
+        //nopt needed any more :-) constructors lol
+        //enemy.maxHP = 25;
+        //enemy.hp = enemy.maxHP;
 
     }
 
@@ -39,8 +40,11 @@ public class Battler
     public int attack = 25;
 
     //Constructor for battle hp 
-    public Battler(int nMaxHP, int nHP, int NAttack)
+    public Battler(int nMaxHP = 100, int nHP = 100, int nAttack = 25)
     {
-
+        maxHP = nMaxHP;
+        hp = nHP;
+        attack = nAttack;
     }
+
 }

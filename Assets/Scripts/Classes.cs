@@ -27,10 +27,10 @@ public class Classes : MonoBehaviour
     }
 }
 
-public void Battler
-{
+//public void Battler
+//{
     // Variables
-    int maxHP = 100;
-    int hp = 100;
-    int attackPower = 12;
-}
+  //  int maxHP = 100;
+    //int hp = 100;
+    //int attackPower = 12;/
+//}

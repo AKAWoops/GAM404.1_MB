@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Week5 : MonoBehaviour
+public class NewBehaviourScript : MonoBehaviour
 {
-    inventory = new Dictionary<string, >
     // Start is called before the first frame update
     void Start()
     {
