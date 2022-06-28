@@ -71,6 +71,11 @@ public class Conditionals : MonoBehaviour
         {
             if (playerAction == "Attack")
             {
+                if(playerHealth != 0)
+                {
+                    enemyHealth = enemyHealth - playerAttack;
+                }
+
                 enemyHealth = enemyHealth - playerAttack;
                 if (enemyHealth == 0)
                 {
