@@ -18,7 +18,7 @@ public class Conditionals : MonoBehaviour
     [SerializeField]
     int enemyAttack = 2;
     [SerializeField]
-    bool theEnd;
+    bool theEnd = false;
     bool printOnce = false;
 
     // Start is called before the first frame update
@@ -71,11 +71,6 @@ public class Conditionals : MonoBehaviour
         {
             if (playerAction == "Attack")
             {
-                if(playerHealth != 0)
-                {
-                    enemyHealth = enemyHealth - playerAttack;
-                }
-
                 enemyHealth = enemyHealth - playerAttack;
                 if (enemyHealth == 0)
                 {
@@ -88,7 +83,7 @@ public class Conditionals : MonoBehaviour
                     playerHealth = playerHealth - enemyAttack;
                 }
                 playerHealth = playerHealth - enemyAttack;
-                if(playerHealth == 0)
+                if(playerHealth <= 0)
                 {
                     theEnd = true;
                 }
