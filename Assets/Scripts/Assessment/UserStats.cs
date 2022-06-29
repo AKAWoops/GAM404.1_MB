@@ -23,9 +23,20 @@ public class UserStats : MonoBehaviour
     //Dodge
     public float baseDodge;
     public float curDodge;
-    // HIT current
-    public float curHit;
+    // HIT current percentage chance
+    public float baseHitPercent;
+    public float curHitPercent;
+    //health points regen timer and amount
+    public float hpRegenTimer;
+    public float hpRegenAmount;
+    // Mana Regeneration timer and amount
+    public float manaRegenTimer;
+    public float manaRegenAmount;
+    // experiennce points
+    public float curXp;
+    public float maxXp;
 
+    public bool isDead;
 
     // Start is called before the first frame update
     void Start()
