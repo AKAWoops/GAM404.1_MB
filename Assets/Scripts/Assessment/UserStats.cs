@@ -41,10 +41,13 @@ public class UserStats : MonoBehaviour
     public bool isDead;
     // 
     public GameObject selectedUnit;
+    //for access to enemy stats script
+    public EnemyStats enemyStatsScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -53,6 +56,12 @@ public class UserStats : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
             {
              SelectTarget();
+        }
+        //test variable for bottom test script
+        if (Input.GetButtonDown("1"))
+        {
+            if(selectedUnit != null)  
+                BasicAttack();
         }
     }
     void SelectTarget()
@@ -65,7 +74,14 @@ public class UserStats : MonoBehaviour
             if (hit.transform.tag == "enemy") {
 
                 selectedUnit = hit.transform.gameObject;
+                // grabs stats from selected unit displays enemy stats
+                enemyStatsScript = selectedUnit.transform.gameObject.transform.GetComponent<EnemyStats>();
             }
         }
+    }
+    // test variable
+    void BasicAttack()
+    {
+        enemyStatsScript.RecievedDamage(10);
     }
 }
