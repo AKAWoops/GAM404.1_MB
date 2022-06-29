@@ -23,6 +23,8 @@ public class UserStats : MonoBehaviour
     //Dodge
     public float baseDodge;
     public float curDodge;
+    // HIT current
+    public float curHit;
 
 
     // Start is called before the first frame update
