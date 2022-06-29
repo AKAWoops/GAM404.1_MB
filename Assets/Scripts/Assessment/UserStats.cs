@@ -8,6 +8,8 @@ public class UserStats : MonoBehaviour
     public string username;
     //current level if i get that far 
     public int level;
+    // User Class meaning what character your going to pick
+    public string UserClass;
     //Health Points
     public float CurHP;
     public float maxHP;
