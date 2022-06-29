@@ -20,7 +20,7 @@ public class UserStats : MonoBehaviour
     public float baseAttackPower;
     public float curAttackPower;
     //Attack Speed
-    public float baseAttacSpeed;
+    public float baseAttackSpeed;
     public float curAttackSpeed;
     //Dodge
     public float baseDodge;
