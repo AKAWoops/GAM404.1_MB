@@ -39,7 +39,7 @@ public class CharacterSelect : MonoBehaviour
         var Comp = User.GetComponent<UserStats>();
         // call userclass string in user stats then we set it to all class stats then the class chosen from array 0 or 1
         Comp.UserClass = AllClassStats[classChosen].UserClass;
-        // to change variable of classes
+        // to change variable for classes
         Comp.baseAttackPower = AllClassStats[classChosen].baseAttackPower;
         Comp.baseAttackSpeed = AllClassStats[classChosen].baseAttackSpeed;
     }

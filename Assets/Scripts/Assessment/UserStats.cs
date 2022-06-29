@@ -37,9 +37,10 @@ public class UserStats : MonoBehaviour
     // experiennce points
     public float curXp;
     public float maxXp;
-
+    // player died
     public bool isDead;
-
+    // 
+    public GameObject selectedUnit;
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +50,22 @@ public class UserStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+            {
+             SelectTarget();
+        }
+    }
+    void SelectTarget()
+    {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        // this checks for hits ot enemy tag attached to enemy :-)
+        if (Physics.Raycast(ray, out hit, 10000))
+            {
+            if (hit.transform.tag == "enemy") {
+
+                selectedUnit = hit.transform.gameObject;
+            }
+        }
     }
 }
