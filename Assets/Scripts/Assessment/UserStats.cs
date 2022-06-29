@@ -39,7 +39,7 @@ public class UserStats : MonoBehaviour
     public float maxXp;
     // player died
     public bool isDead;
-    // 
+    // selected UNit gameobjects
     public GameObject selectedUnit;
     //for access to enemy stats script
     public EnemyStats enemyStatsScript;
@@ -52,6 +52,10 @@ public class UserStats : MonoBehaviour
     public float autoAttackCooldown;
     public float autoAttackCurTime;
     public bool canAutoAttack;
+    // double click to stop selection on enemy with timer so you cant just keep doing it 
+    public float doubleClickTimer;
+    // did i double click true or false
+    public bool didIDoubleClick;
 
     // Start is called before the first frame update
     void Start()
@@ -99,6 +103,7 @@ public class UserStats : MonoBehaviour
             if (angle > 60.0)
             {
                 canAttack = false;
+                autoAttackCurTime = 0;//when we go out of range or out of los it resets to zero
             }
             else
             {
@@ -109,62 +114,100 @@ public class UserStats : MonoBehaviour
                 else
                 {
                     canAttack = false;
+                    autoAttackCurTime = 0;//when we go out of range or out of los it resets to zero
+                }
+                // unselect enenmy by double click with detection on double click
+                if (doubleClickTimer > 0)
+                {// by clicking of enemy count down using time.deltatime
+                    doubleClickTimer -= Time.deltaTime;
+                }
+                else
+                {
+                    didIDoubleClick = false;
                 }
             }
-        }
 
-        // Automatic attack with cool down timer
-        if (selectedUnit != null && canAttack && canAutoAttack = true)
-        {
-            if(autoAttackCurTime < autoAttackCooldown)
-            {//while the number above is lower then the belowe number it will count up with deltaTime
-                autoAttackCurTime += Time.deltaTime;
-            }
-            else
+
+            // Automatic attack with cool down timer
+            if (selectedUnit != null && canAttack && canAutoAttack)
             {
-                BasicAttack();
-                autoAttackCurTime = 0;// this will reset it at zero
+                if (autoAttackCurTime < autoAttackCooldown)
+                {//while the number above is lower then the belowe number it will count up with deltaTime
+                    autoAttackCurTime += Time.deltaTime;
+                }
+                else
+                {
+                    BasicAttack();
+                    autoAttackCurTime = 0;// this will reset it at zero
+                }
             }
-        }
-        //Attacks bind to onkeydown press 1
-        if (Input.GetKeyDown("1"))
-        {
-            //make sure player is facing enemy and is in range
-            if (selectedUnit != null && canAttack)
-                 BasicAttack();
-            canAutoAttack = true;
-        }
-    }
-        void SelectTarget(int selectedNum)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            // this checks for hits ot enemy tag attached to enemy :-)
-            if (Physics.Raycast(ray, out hit, 10000))
+            //Attacks bind to onkeydown press 1
+            if (Input.GetKeyDown("1"))
             {
-                if (hit.transform.tag == "enemy")
+                //make sure player is facing enemy and is in range
+                if (selectedUnit != null && canAttack)
+                {
+                    BasicAttack();
+                    canAutoAttack = true;
+                }
+            }
+
+            Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit2;
+
+            if(Physics.Raycast (ray2, out hit2, 10000))
+            {
+                if (hit2.transform.tag == "enemy")
                 {
 
-                    selectedUnit = hit.transform.gameObject;
-                    // grabs stats from selected unit displays enemy stats
-                    enemyStatsScript = selectedUnit.transform.gameObject.transform.GetComponent<EnemyStats>();
-
-                // make sure enemy is selcted first above
-                    if (selectedNum == 0)
+                }
+            }
+            
+        }
+            void SelectTarget(int selectedNum)
+            {
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                // this checks for hits ot enemy tag attached to enemy :-)
+                if (Physics.Raycast(ray, out hit, 10000))
+                {
+                    if (hit.transform.tag == "enemy")
                     {
-                    canAutoAttack = false;
+                        selectedUnit = hit.transform.gameObject;
+                        // grabs stats from selected unit displays enemy stats
+                        enemyStatsScript = selectedUnit.transform.gameObject.transform.GetComponent<EnemyStats>();
+                                                // make sure enemy is selcted first above
+                        if (selectedNum == 0 && selectedUnit == null)//when called this can now stop the left click on the enemy to get out of autoattack
+                        {
+                            canAutoAttack = false;
+                        }
+                        else if (selectedNum == 1)
+                        {
+                            canAutoAttack = true;
+                        }
                     }
-                    else if (selectedNum == 1)
+                    else
                     {
-                    canAutoAttack = true;
+                        if (selectedUnit != null)
+                        {
+                            didIDoubleClick = true;
+                            doubleClickTimer = 0.3f;//double Click Timer set to 3 secconds starts at zero till clicked
+                        }
+                        else
+                        {
+                            print("Target Deselected ");
+                            selectedUnit = null; //is deselected erase the unit from array
+                            didIDoubleClick = false;//it resets from false rto ture when unclicke just changing states
+                            doubleClickTimer = 0;// reserts dctimer back to zero
+                            autoAttackCurTime = 0;// resets aacurtime to zero
+                        }
                     }
                 }
             }
-        }
-        // test variable
-        void BasicAttack()
-        {
-            enemyStatsScript.RecievedDamage(10);
+            // test variable
+            void BasicAttack()
+            {
+                enemyStatsScript.RecievedDamage(10);
+            }
         }
     }
-
