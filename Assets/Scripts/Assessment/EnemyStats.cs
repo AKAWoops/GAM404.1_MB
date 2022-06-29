@@ -25,7 +25,7 @@ public class EnemyStats : MonoBehaviour
     public void RecievedDamage (float dmg)
     {// current health by damage delt -=
         curHp -= dmg;
-
+        //could add a if zero dont go past zero die for eg time getting slim
         print("damage delt = " + dmg);
         print("Enemy HP Left = " + curHp);
     }
