@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyStats : MonoBehaviour
-{
+{// setting float for current hp and max hp
     public float curHp;
     public float maxHp;
 
@@ -26,6 +26,7 @@ public class EnemyStats : MonoBehaviour
     {// current health by damage delt -=
         curHp -= dmg;
         //could add a if zero dont go past zero die for eg time getting slim
+        // prints damaghe delt and hp left in console each time ahit is done
         print("damage delt = " + dmg);
         print("Enemy HP Left = " + curHp);
     }

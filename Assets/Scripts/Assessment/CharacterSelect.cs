@@ -5,7 +5,9 @@ public class CharacterSelect : MonoBehaviour
 {
     //array to store stats for characters class 
     public BasicStats[] AllClassStats;
+    // this is for the window to pop up using bool for gui button push
     public bool ClassSelectWindow;
+
     public GameObject User;
     // Start is called before the first frame update
     void Start()

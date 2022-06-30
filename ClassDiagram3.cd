@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BasicStats">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgIAgAAAAAAAAAAAAgAAAAAAAAAAAAAAAMAgAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Assessment\BasicStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CharacterSelect">
+    <Position X="6.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAQBAAAAACAAAAAAAAAAAAAAAAAAAAAAAACAAEAAABA=</HashCode>
+      <FileName>Assets\Scripts\Assessment\CharacterSelect.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyStats">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAQAAAAAACAAAAAAAAAAAAAEAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\Assessment\EnemyStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserCamera">
+    <Position X="10.25" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AQQAGQIAACBBggAAMASAIAMDgEgAAgAAAAxAAAAEAAA=</HashCode>
+      <FileName>Assets\Scripts\Assessment\UserCamera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserMovement">
+    <Position X="12.25" Y="4.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AQQAAghAACAAAQEAAAQAAACAAgAACAAAAQEAAAggAAA=</HashCode>
+      <FileName>Assets\Scripts\Assessment\UserMovement.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UserStats">
+    <Position X="14.5" Y="4.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>WgYQgAAAACAMAAAAAgAACCEANBUAAAAAAMAgIgAQAEI=</HashCode>
+      <FileName>Assets\Scripts\Assessment\UserStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battler1" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAI=</HashCode>
+      <FileName>Assets\Scripts\Battler1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battler" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAACAAABAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Battler1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Battlerv2" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAQAAAABAAAAAAABQA=</HashCode>
+      <FileName>Assets\Scripts\Battlerv2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Classes" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAgAACAAAEAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Assets\Scripts\Classes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Conditionals" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAKAAAACAAAAEgAAAAAAAAAAAQCAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Conditionals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FizzBuzz" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\FizzBuzz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Functions" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Functions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Functions1" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAEAAAAAEAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Functions1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Integers" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAQAAAAAACAAAAAAAAAAAAAAAAAAAAABAQAAAAQIAAA=</HashCode>
+      <FileName>Assets\Scripts\Integers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NewBehaviourScript" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\NewBehaviourScript.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerControls" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAiAAAAAAACAAAAAAAQAEAUAAAAAAAAAAAAg=</HashCode>
+      <FileName>Assets\Scripts\PlayerControls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Strings" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAEAAAAAAACAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Strings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Week1" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Week1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

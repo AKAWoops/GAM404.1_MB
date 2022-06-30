@@ -150,7 +150,7 @@ public class UserStats : MonoBehaviour
                 canAutoAttack = true;
             }
 
-            // toool tip pop up display flakey at best 
+            // toool tip pop up display still flakey could be unity 
             Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit2;
 
